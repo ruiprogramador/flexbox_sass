@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>FlexBox Sass Booking App &mdash; Your all-in-one booking app</title>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="logo-box">
+                    <img src="img/logo.png" alt="FlexBox logo" class="logo-img">
+                </div>
+                <div class="header__search-box">
+                    <form action="#" class="header__search-box-form">
+                        <input type="text" class="header__search-box-form-input" placeholder="Search hotels, flights, car rentals...">
+                        <button class="header__search-box-form-button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <!-- <svg class="header__search-icon">
+                                <use xlink:href="img/icons.svg#icon-magnifying-glass"></use>
+                            </svg> -->
+                        </button>
+                    </form>
+                </div>
+                <div class="header__nav">
+                    <div class="header__bookmark-box">
+                        <i class="fa-solid fa-bookmark header__bookmark-box-icon"></i>
+                        <!-- <svg class="header__bookmark-box-icon">
+                            <use xlink:href="img/icons.svg#icon-bookmark"></use>
+                        </svg> -->
+                        <span class="header__bookmark-box-count">7</span>
+                    </div>
+                    <div class="header__chat-box">
+                        <i class="fa-solid fa-comment-dots header__chat-box-icon"></i>
+                        <!-- <svg class="header__chat-box-icon">
+                            <use xlink:href="img/icons.svg#icon-chat"></use>
+                        </svg> -->
+                        <span class="header__chat-box-count">7</span>
+                    </div>
+                    <div class="header__user-box">
+                        <img src="img/user.jpg" alt="User photo" class="header__user-box-photo">
+                        <span class="header__user-box-name">Rui</span>
+                        <i class="fa-solid fa-chevron-down header__user-box-icon"></i>
+                        <!-- <svg class="header__user-box-icon">
+                            <use xlink:href="img/icons.svg#icon-chevron-down"></use>
+                        </svg> -->
+                    </div>
+                </div>
+                <div class="header__text-box">
+                    <!-- <h1 class="header__text-box-heading-primary">
+                        <span class="header__text-box-heading-primary--main">FlexBox</span>
+                        <span class="header__text-box-heading-primary--sub">Your all-in-one booking app</span>
+                    </h1> -->
+                    <a href="#" class="btn btn--white header__text-box-btn--download">Download App</a>
+                </div>
+            </header>
+            <section class="main-content">
+                <nav class="sidebar">
+                    <ul class="sidebar__list">
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-hotel sidebar__icon"></i>Hotels</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-plane sidebar__icon"></i>Flights</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-bed sidebar__icon"></i>Stays</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-route sidebar__icon"></i>Tours</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-ship sidebar__icon"></i>Cruises</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-person-hiking sidebar__icon"></i>Activities</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-car sidebar__icon"></i>Car rentals</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-map sidebar__icon"></i>Attractions</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="fa-solid fa-taxi sidebar__icon"></i>Airport taxis</a></li>
+                    </ul>
+                </nav>
+                <main class="hotel-view">
+                    <section class="section-about">
+                        <div class="u-center-text u-margin-bottom-big">
+                            <h2 class="heading-secondary">
+                                Exciting tours for adventurous people
+                            </h2>
+                        </div>
+                    </section>
+                </main>
+            </section>
+            <footer class="footer">
+                <p class="footer__text">
+                    Built by <a href="#" class="footer__link">THE RDAM</a> for learning purposes.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
