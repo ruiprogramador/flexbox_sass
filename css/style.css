@@ -287,34 +287,112 @@ header.header .header__text-box-btn--download:focus {
 section.main-content {
   display: flex;
 }
-section.main-content nav.sidebar {
-  background-color: #faf9f9;
-  border-right: 1px solid #ccc;
-  flex: 0 0 25%;
-}
-section.main-content nav.sidebar ul.sidebar__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-section.main-content nav.sidebar ul.sidebar__list li.sidebar__item {
-  border-bottom: 1px solid #ccc;
-}
-section.main-content nav.sidebar ul.sidebar__list li.sidebar__item a.sidebar__link {
-  display: block;
-  padding: 1.5rem 2rem;
-  color: #777;
-  text-decoration: none;
-}
-section.main-content nav.sidebar ul.sidebar__list li.sidebar__item a.sidebar__link:hover, section.main-content nav.sidebar ul.sidebar__list li.sidebar__item a.sidebar__link.active {
-  background-color: #FF3366;
-  color: #faf9f9;
-}
 section.main-content main.hotel-view {
   background-color: #f0eeee;
   flex: 1;
 }
 
-/* @import "components/buttons"; */
+nav.sidebar {
+  background-color: #faf9f9;
+  border-right: 1px solid #ccc;
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav.sidebar ul.sidebar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item {
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item a.sidebar__link {
+  display: block;
+  padding: 1.5rem 2rem;
+  color: #777;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item a.sidebar__link:hover {
+  /*background-color: $color-primary;*/
+  color: #faf9f9;
+  text-transform: uppercase;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item a.sidebar__link .sidebar__icon {
+  margin-right: 1.5rem;
+  fill: currentColor;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item-active {
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item-active a.sidebar__link {
+  display: block;
+  padding: 1.5rem 2rem;
+  color: #faf9f9;
+  text-decoration: none;
+  background-color: #eb2f64;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item-active a.sidebar__link .sidebar__icon {
+  margin-right: 1.5rem;
+  fill: currentColor;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #eb2f64;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease, width 0.3s cubic-bezier(1, 0, 0, 1), background-color 0.3s ease;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item:hover::before,
+nav.sidebar ul.sidebar__list li.sidebar__item-active::before {
+  transform: scaleY(1);
+  width: 100%;
+  cursor: pointer;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item:active::before {
+  background-color: #FF3366;
+}
+nav.sidebar ul.sidebar__list li.sidebar__item::not(:last-child) a.sidebar__link {
+  border-bottom: none;
+}
+nav.sidebar .sidebar__legal {
+  padding: 2rem;
+  border-top: 1px solid #ccc;
+}
+nav.sidebar .sidebar__legal ul.sidebar__legal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+nav.sidebar .sidebar__legal ul.sidebar__legal-list li.sidebar__legal-item a.sidebar__legal-link {
+  font-size: 1.2rem;
+  color: #777;
+  text-decoration: none;
+}
+nav.sidebar .sidebar__legal ul.sidebar__legal-list li.sidebar__legal-item a.sidebar__legal-link:hover {
+  text-decoration: underline;
+}
+nav.sidebar .sidebar__legal p.sidebar__legal-copy {
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 1rem;
+}
 
 /*# sourceMappingURL=style.css.map */
