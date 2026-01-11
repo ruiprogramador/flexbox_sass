@@ -18,6 +18,7 @@ Grey dark 3: #999
 */
 :root {
   --background-image-body: linear-gradient(to right bottom, #FF3366, #BA265D);
+  --border-bottom-initial: 1px solid $color-grey-light-4;
 }
 
 * {
@@ -291,6 +292,62 @@ section.main-content main.hotel-view {
   /* background-color: $color-grey-light-3; */
   flex: 1;
 }
+section.main-content main.hotel-view .section-about {
+  /* padding: 5rem 10rem; */
+  display: flex;
+  background-color: #faf9f9;
+  border-bottom: var(--border-bottom-initial);
+}
+section.main-content main.hotel-view .section-about .description {
+  background-color: #faf9f9;
+  font-size: 1.6rem;
+  color: #777;
+  line-height: 1.7;
+  flex: 0 0 60%;
+  padding: 3rem;
+}
+section.main-content main.hotel-view .section-about .description__heading {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+section.main-content main.hotel-view .section-about .description__text {
+  /*margin-bottom: 2rem;*/
+  border-bottom: var(--border-bottom-initial);
+  padding-bottom: 2rem;
+}
+section.main-content main.hotel-view .section-about .description__text:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+section.main-content main.hotel-view .section-about .description__text:last-child {
+  border-bottom: none;
+}
+section.main-content main.hotel-view .section-about .facilities {
+  background-color: #f4f2f2;
+  box-shadow: 0 1.5rem 4rem #333;
+  padding: 2rem;
+  flex: 1;
+}
+section.main-content main.hotel-view .section-about .facilities__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+section.main-content main.hotel-view .section-about .facilities__list__item {
+  flex: 0 0 50%;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #777;
+}
+section.main-content main.hotel-view .section-about .facilities__list__item__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentColor;
+  margin-right: 1rem;
+}
 
 nav.sidebar {
   background-color: #faf9f9;
@@ -307,7 +364,7 @@ nav.sidebar ul.sidebar__list {
   font-size: 1.4rem;
 }
 nav.sidebar ul.sidebar__list li.sidebar__item {
-  border-bottom: 1px solid #ccc;
+  border-bottom: var(--border-bottom-initial);
   position: relative;
 }
 nav.sidebar ul.sidebar__list li.sidebar__item a.sidebar__link {
@@ -328,7 +385,7 @@ nav.sidebar ul.sidebar__list li.sidebar__item a.sidebar__link .sidebar__icon {
   fill: currentColor;
 }
 nav.sidebar ul.sidebar__list li.sidebar__item-active {
-  border-bottom: 1px solid #ccc;
+  border-bottom: var(--border-bottom-initial);
   position: relative;
 }
 nav.sidebar ul.sidebar__list li.sidebar__item-active a.sidebar__link {
@@ -515,6 +572,134 @@ nav.sidebar .sidebar__legal p.sidebar__legal-copy {
     opacity: 1;
     box-shadow: none;
   }
+}
+.users_reviews_recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+.users_reviews_recommendations .users_reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.users_reviews_recommendations .users_reviews .heading-secondary {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+.users_reviews_recommendations .users_reviews .review {
+  border-bottom: var(--border-bottom-initial);
+  padding-bottom: 1.5rem;
+}
+.users_reviews_recommendations .users_reviews .review__user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.users_reviews_recommendations .users_reviews .review__user-photo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+}
+.users_reviews_recommendations .users_reviews .review__user-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+}
+.users_reviews_recommendations .users_reviews .review__user-date {
+  font-size: 1.2rem;
+  color: #999;
+  margin-left: auto;
+}
+.users_reviews_recommendations .users_reviews .review__rating {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #eb2f64;
+  margin-top: 0.5rem;
+  margin-left: auto;
+}
+.users_reviews_recommendations .users_reviews .review__rating-star {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentColor;
+  margin-right: 0.5rem;
+}
+.users_reviews_recommendations .users_reviews .review__text {
+  font-size: 1.4rem;
+  color: #777;
+  line-height: 1.6;
+}
+.users_reviews_recommendations .recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.users_reviews_recommendations .recommendations .heading-secondary {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+.users_reviews_recommendations .recommendations .recommendations {
+  font-size: 1.4rem;
+  color: #777;
+  line-height: 1.6;
+}
+.users_reviews_recommendations .recommendations .recommendations__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.users_reviews_recommendations .recommendations .recommendation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.users_reviews_recommendations .recommendations .recommendation__photo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+}
+.users_reviews_recommendations .recommendations .recommendation__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentColor;
+  margin-right: 1rem;
+  color: #eb2f64;
+}
+.users_reviews_recommendations .recommendations .recommendation__text {
+  font-size: 1.4rem;
+  color: #777;
+}
+.users_reviews_recommendations .recommendations .recommendation__name {
+  font-weight: bold;
+  color: #333;
+  margin-right: 0.5rem;
+}
+.users_reviews_recommendations .recommendations .recommendation__location {
+  font-size: 1.2rem;
+  color: #999;
+}
+.users_reviews_recommendations .recommendations .recommendation__rating {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #eb2f64;
+  margin-left: auto;
+}
+.users_reviews_recommendations .recommendations .recommendation__rating-star {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentColor;
+  margin-right: 0.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

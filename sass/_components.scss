@@ -14,7 +14,7 @@ nav.sidebar{
         font-size: 1.4rem;
 
         li.sidebar__item{
-            border-bottom: 1px solid $color-grey-light-4;
+            border-bottom: var(--border-bottom-initial);
             position: relative;
 
             a.sidebar__link{
@@ -38,7 +38,7 @@ nav.sidebar{
             }
         }
         li.sidebar__item-active{
-            border-bottom: 1px solid $color-grey-light-4;
+            border-bottom: var(--border-bottom-initial);
             position: relative;
 
             a.sidebar__link{
@@ -262,5 +262,155 @@ nav.sidebar{
         transform: scale(1);
         opacity: 1;
         box-shadow: none;
+    }
+}
+
+//////////////////////
+/// users_reviews_recommendations  ///
+/// ////////////////////
+.users_reviews_recommendations{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+
+    .users_reviews{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .heading-secondary{
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+        }
+
+        .review{
+            border-bottom: var(--border-bottom-initial);
+            padding-bottom: 1.5rem;
+            
+            &__user{
+
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                &-photo{
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-right: 1.5rem;
+                }
+
+                &-name{
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: $color-grey-dark-1;
+                }
+
+                &-date{
+                    font-size: 1.2rem;
+                    color: $color-grey-dark-3;
+                    margin-left: auto;
+                }
+            }
+
+            &__rating{
+                display: flex;
+                align-items: center;
+                font-size: 1.4rem;
+                color: $color-primary;
+                margin-top: 0.5rem;
+                margin-left: auto;
+
+                &-star{
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    fill: currentColor;
+                    margin-right: 0.5rem;
+                }
+            }
+
+            &__text{
+                font-size: 1.4rem;
+                color: $color-grey-dark-2;
+                line-height: 1.6;
+            }
+        }
+    }
+
+    .recommendations{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .heading-secondary{
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+        }
+
+        .recommendations{
+            font-size: 1.4rem;
+            color: $color-grey-dark-2;
+            line-height: 1.6;
+
+            &__list{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .recommendation{
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            &__photo{
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 1.5rem;
+            }
+
+            &__icon{
+                width: 1.6rem;
+                height: 1.6rem;
+                fill: currentColor;
+                margin-right: 1rem;
+                color: $color-primary;
+            }
+            &__text{
+                font-size: 1.4rem;
+                color: $color-grey-dark-2;
+            }
+            &__name{
+                font-weight: bold;
+                color: $color-grey-dark-1;
+                margin-right: 0.5rem;
+            }
+            &__location{
+                font-size: 1.2rem;
+                color: $color-grey-dark-3;
+            }
+            &__rating{
+                display: flex;
+                align-items: center;
+                font-size: 1.4rem;
+                color: $color-primary;
+                margin-left: auto;
+
+                &-star{
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    fill: currentColor;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
     }
 }
