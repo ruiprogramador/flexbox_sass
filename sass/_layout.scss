@@ -264,35 +264,6 @@ section.main-content{
 
     display: flex;
 
-    nav.sidebar{
-        background-color: $color-grey-light-1;
-        border-right: 1px solid $color-grey-light-4;
-        flex: 0 0 25%;
-
-        ul.sidebar__list{
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
-            li.sidebar__item{
-                border-bottom: 1px solid $color-grey-light-4;
-
-                a.sidebar__link{
-                    display: block;
-                    padding: 1.5rem 2rem;
-                    color: $color-grey-dark-2;
-                    text-decoration: none;
-
-                    &:hover,
-                    &.active{
-                        background-color: $color-primary-light;
-                        color: $color-grey-light-1;
-                    }
-                }
-            }
-        }
-    }
-
     main.hotel-view{
         background-color: $color-grey-light-3;
         flex: 1;
