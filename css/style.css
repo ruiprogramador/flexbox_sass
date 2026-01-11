@@ -592,7 +592,10 @@ nav.sidebar .sidebar__legal p.sidebar__legal-copy {
 }
 .users_reviews_recommendations .users_reviews .review {
   border-bottom: var(--border-bottom-initial);
-  padding-bottom: 1.5rem;
+  /* padding: 3rem;
+
+  position: relative;
+  overflow: hidden; */
 }
 .users_reviews_recommendations .users_reviews .review__user {
   display: flex;
@@ -634,6 +637,24 @@ nav.sidebar .sidebar__legal p.sidebar__legal-copy {
   font-size: 1.4rem;
   color: #777;
   line-height: 1.6;
+  z-index: 10;
+  position: relative;
+}
+.users_reviews_recommendations .users_reviews .review {
+  /* &__text::before{
+      content: '\201C'; // Unicode for left double quotation mark
+      font-family: Arial, sans-serif;
+      font-size: 3rem;
+      color: $color-primary;
+      vertical-align: top;
+      margin-right: 0.5rem;
+      line-height: 1;
+      position: absolute;
+      top: 0rem;
+      left: 0rem;
+      font-size: 20rem;
+      z-index: 1;
+  } */
 }
 .users_reviews_recommendations .recommendations {
   display: flex;

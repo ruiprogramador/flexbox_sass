@@ -288,7 +288,10 @@ nav.sidebar{
 
         .review{
             border-bottom: var(--border-bottom-initial);
-            padding-bottom: 1.5rem;
+            /* padding: 3rem;
+
+            position: relative;
+            overflow: hidden; */
             
             &__user{
 
@@ -337,7 +340,23 @@ nav.sidebar{
                 font-size: 1.4rem;
                 color: $color-grey-dark-2;
                 line-height: 1.6;
+                z-index: 10;
+                position: relative;
             }
+            /* &__text::before{
+                content: '\201C'; // Unicode for left double quotation mark
+                font-family: Arial, sans-serif;
+                font-size: 3rem;
+                color: $color-primary;
+                vertical-align: top;
+                margin-right: 0.5rem;
+                line-height: 1;
+                position: absolute;
+                top: 0rem;
+                left: 0rem;
+                font-size: 20rem;
+                z-index: 1;
+            } */
         }
     }
 
