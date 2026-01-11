@@ -146,59 +146,6 @@ nav.sidebar{
     }
 
 }
-.card{
-    background-color: $color-primary-light;
-    border: 1px solid $color-grey-light-4;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-
-    img.card__image{
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .card__content{
-        padding: 1.5rem;
-        flex-grow: 1;
-
-        h3.card__title{
-            font-size: 1.6rem;
-            margin: 0 0 1rem 0;
-            color: $color-grey-dark-1;
-        }
-
-        p.card__description{
-            font-size: 1.4rem;
-            color: $color-grey-dark-2;
-            margin: 0;
-        }
-    }
-
-    .card__actions{
-        padding: 1.5rem;
-        border-top: 1px solid $color-grey-light-4;
-        display: flex;
-        justify-content: flex-end;
-
-        button.card__button{
-            background-color: $color-primary;
-            color: $color-grey-light-1;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            font-size: 1.4rem;
-            border-radius: 0.3rem;
-            cursor: pointer;
-
-            &:hover{
-                background-color: darken($color-primary, 10%);
-            }
-        }
-    }
-}
 
 //////////////////////
 /// Overview  ///

@@ -414,53 +414,6 @@ nav.sidebar .sidebar__legal p.sidebar__legal-copy {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  background-color: #FF3366;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.card img.card__image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.card .card__content {
-  padding: 1.5rem;
-  flex-grow: 1;
-}
-.card .card__content h3.card__title {
-  font-size: 1.6rem;
-  margin: 0 0 1rem 0;
-  color: #333;
-}
-.card .card__content p.card__description {
-  font-size: 1.4rem;
-  color: #777;
-  margin: 0;
-}
-.card .card__actions {
-  padding: 1.5rem;
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: flex-end;
-}
-.card .card__actions button.card__button {
-  background-color: #eb2f64;
-  color: #faf9f9;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1.4rem;
-  border-radius: 0.3rem;
-  cursor: pointer;
-}
-.card .card__actions button.card__button:hover {
-  background-color: rgb(210.7368421053, 20.2631578947, 73.9605263158);
-}
-
 .overview {
   display: flex;
   align-items: center;
