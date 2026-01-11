@@ -2,6 +2,7 @@
 
 :root {
   --background-image-body: linear-gradient(to right bottom, #{$color-primary-light}, #{$color-primary-dark});
+  --border-bottom-initial: 1px solid $color-grey-light-4;
 }
 
 * {
