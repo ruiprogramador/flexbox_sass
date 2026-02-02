@@ -13,11 +13,43 @@ nav.sidebar{
 
         font-size: 1.4rem;
 
+        @media only screen and (max-width: $bp-medium){
+            flex-direction: row;
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: $bp-small){
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media only screen and (max-width: $bp-tiny){
+            gap: 3rem;
+        }
+
         li.sidebar__item{
             border-bottom: var(--border-bottom-initial);
             position: relative;
+            
+            @media only screen and (max-width: $bp-medium){
+                flex: 1;
+                text-align: center;
+            }
 
-            a.sidebar__link{
+            @media only screen and (max-width: $bp-small){
+                flex: 0 0 auto;
+                text-align: center;
+            }
+
+            @media only screen and (max-width: $bp-tiny){
+                flex: 0 0 20%;
+                height: 40px;
+                width: 40px;
+            }
+
+            & a.sidebar__item-link{
                 display: block;
                 padding: 1.5rem 2rem;
                 color: $color-grey-dark-2;
@@ -25,72 +57,107 @@ nav.sidebar{
                 position: relative;
                 z-index: 1;
 
+                @media only screen and (max-width: $bp-medium){
+                    padding: 0px;
+                    display: inline-flex;
+                    justify-content: center;
+                    text-align: center;
+                    flex-direction: column;
+                }
+
+                @media only screen and (max-width: $bp-small){
+                    font-size: 1.3rem; // Smaller text
+                }
+
+                @media only screen and (max-width: $bp-smallest){
+                    font-size: 1.2rem;
+                }
+
                 &:hover{
                     /*background-color: $color-primary;*/
                     color: $color-grey-light-1;
                     text-transform: uppercase;
+
+                    @media only screen and (max-width: $bp-tiny){
+                        text-transform: none;
+                    }
                 }
 
                 .sidebar__icon{
                     margin-right: 1.5rem;
                     fill: currentColor;
+
+                    @media only screen and (max-width: $bp-medium){
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+
+                    /* @media only screen and (max-width: $bp-small){
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        margin-bottom: 0.3rem;
+                    }
+
+                    @media only screen and (max-width: $bp-smallest){
+                        width: 1.6rem;
+                        height: 1.6rem;
+                    } */
                 }
             }
-        }
-        li.sidebar__item-active{
-            border-bottom: var(--border-bottom-initial);
-            position: relative;
-
-            a.sidebar__link{
-                display: block;
-                padding: 1.5rem 2rem;
-                color: $color-grey-light-1;
-                text-decoration: none;
-                background-color: $color-primary;
+            &-active{
+                border-bottom: var(--border-bottom-initial);
                 position: relative;
-                z-index: 1;
-                text-transform: uppercase;
 
-                .sidebar__icon{
-                    margin-right: 1.5rem;
-                    fill: currentColor;
+                & a.sidebar__item-link{
+                    color: $color-grey-light-1;
+                    background-color: $color-primary;
+                    text-transform: uppercase;
+
+                    @media only screen and (max-width: $bp-tiny){
+                        text-transform: none;
+                    }
                 }
             }
-        }
-        li.sidebar__item::before{
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background-color: $color-primary;
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: 
-                transform 0.3s ease
-                , width 0.3s cubic-bezier(1, 0, 0, 1)
-                , background-color 0.3s ease
-            ;
-        }
-        li.sidebar__item:hover::before,
-        li.sidebar__item-active::before{
-            transform: scaleY(1); 
-            width: 100%;
-            cursor: pointer;
-        }
-        li.sidebar__item:active::before{
-            background-color: $color-primary-light;
-        }
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 3px;
+                height: 100%;
+                background-color: $color-primary;
+                transform: scaleY(0);
+                transform-origin: bottom;
+                transition: 
+                    transform 0.3s ease
+                    , width 0.3s cubic-bezier(1, 0, 0, 1)
+                    , background-color 0.3s ease
+                ;
+            }
+            &:hover::before,
+            &-active::before{
+                transform: scaleY(1); 
+                width: 100%;
+                cursor: pointer;
+            }
 
-        li.sidebar__item::not(:last-child) a.sidebar__link{
-            border-bottom: none;
+            &:active::before{
+                background-color: $color-primary-light;
+            }
+
+            &::not(:last-child) &-link{
+                border-bottom: none;
+            }
         }
     }
 
     .sidebar__legal{
         padding: 2rem;
         border-top: 1px solid $color-grey-light-4;
+
+        @media only screen and (max-width: $bp-medium){
+            display: none;
+        }
 
         ul.sidebar__legal-list{
             list-style: none;
@@ -131,6 +198,10 @@ nav.sidebar{
     gap: 2rem;
     padding: 2rem 2rem 0rem 2rem;
 
+    @media only screen and (max-width: $bp-medium){
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
     &__photo{
         width: 100%;
         aspect-ratio: 4 / 3; /* choose ratio you want */
@@ -160,12 +231,30 @@ nav.sidebar{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
 
+    @media only screen and (max-width: $bp-smallest){
+        justify-content: space-between;
+    }
+
     &__heading{
         font-size: 2.4rem;
-        margin-bottom: 1rem;
         letter-spacing: 0.05rem;
         text-transform: uppercase;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-medium){
+            font-size: 2rem;
+            padding: 1rem 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.8rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        @media only screen and (max-width: $bp-smallest){
+            flex: 0 0 60%;
+            text-align: start;
+        }
     }
     &__stars{
         display: flex;
@@ -174,6 +263,15 @@ nav.sidebar{
         color: $color-primary;
         margin-right: auto;
         flex: 1;
+
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        @media only screen and (max-width: $bp-smallest){
+            justify-content: end;
+        }
 
         .overview__star{
             margin-right: 0.5rem;
@@ -186,6 +284,13 @@ nav.sidebar{
         display: flex;
         align-items: center;
         margin-right: 2rem;
+
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.2rem;
+            justify-content: center;
+            margin: 0;
+            padding: 1rem;
+        }
     }
 
     &__icon-star
@@ -210,6 +315,13 @@ nav.sidebar{
         border-radius: 0.5rem;
         padding: 1rem 1.5rem;
         align-self: stretch;
+
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            margin: 0;
+            align-self: auto;
+        }
 
         &-average{
             font-weight: bold;
@@ -284,6 +396,23 @@ nav.sidebar{
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.05rem;
+
+            @media only screen and (max-width: $bp-medium){
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            @media only screen and (max-width: $bp-small){
+                font-size: 1.8rem;
+            }
+
+            @media only screen and (max-width: $bp-smallest){
+                font-size: 1.6rem;
+            }
+
+            @media only screen and (max-width: $bp-ultra-tiny){
+                font-size: 1.4rem;
+            }
         }
 
         .review{
@@ -299,24 +428,39 @@ nav.sidebar{
                 align-items: center;
                 margin-bottom: 1rem;
 
+                @media only screen and (max-width: $bp-tiny){
+                    flex-direction: column;
+                }
+
                 &-photo{
                     width: 4rem;
                     height: 4rem;
                     border-radius: 50%;
                     object-fit: cover;
                     margin-right: 1.5rem;
+
+                    @media only screen and (max-width: $bp-tiny){
+                        order: 2;
+                    }
                 }
 
-                &-name{
-                    font-size: 1.6rem;
-                    font-weight: bold;
-                    color: $color-grey-dark-1;
-                }
+                &-box{  
+                    
+                    &-name{
+                        font-size: 1.6rem;
+                        font-weight: bold;
+                        color: $color-grey-dark-1;
+                    }
+                    
+                    &-date{
+                        font-size: 1.2rem;
+                        color: $color-grey-dark-3;
+                        margin-left: auto;
+                    }
 
-                &-date{
-                    font-size: 1.2rem;
-                    color: $color-grey-dark-3;
-                    margin-left: auto;
+                    @media only screen and (max-width: $bp-tiny){
+                        order: 3;
+                    }
                 }
             }
 
@@ -328,11 +472,24 @@ nav.sidebar{
                 margin-top: 0.5rem;
                 margin-left: auto;
 
+                @media only screen and (max-width: $bp-tiny){
+                    order: 1;
+                    position: absolute;
+                    right: 0;
+                    margin-top: -1rem;
+                    margin-left: 0;
+                }
+
                 &-star{
                     width: 1.6rem;
                     height: 1.6rem;
                     fill: currentColor;
                     margin-right: 0.5rem;
+
+                    @media only screen and (max-width: $bp-tiny){
+                        width: 1.4rem;
+                        height: 1.4rem;
+                    }
                 }
             }
 
@@ -342,6 +499,7 @@ nav.sidebar{
                 line-height: 1.6;
                 z-index: 10;
                 position: relative;
+                text-align: justify;
             }
             /* &__text::before{
                 content: '\201C'; // Unicode for left double quotation mark
@@ -370,6 +528,23 @@ nav.sidebar{
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.05rem;
+
+            @media only screen and (max-width: $bp-medium){
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            @media only screen and (max-width: $bp-small){
+                font-size: 1.8rem;
+            }
+
+            @media only screen and (max-width: $bp-smallest){
+                font-size: 1.6rem;
+            }
+
+            @media only screen and (max-width: $bp-ultra-tiny){
+                font-size: 1.4rem;
+            }
         }
 
         .recommendations{
@@ -388,12 +563,21 @@ nav.sidebar{
             align-items: center;
             margin-bottom: 1rem;
 
+            @media only screen and (max-width: $bp-tiny){
+                flex-direction: column;
+            }
+
             &__photo{
                 width: 4rem;
                 height: 4rem;
                 border-radius: 50%;
                 object-fit: cover;
                 margin-right: 1.5rem;
+
+                @media only screen and (max-width: $bp-tiny){
+                    order: 2;
+                    margin: 0;
+                }
             }
 
             &__icon{
@@ -411,10 +595,19 @@ nav.sidebar{
                 font-weight: bold;
                 color: $color-grey-dark-1;
                 margin-right: 0.5rem;
+
+                @media only screen and (max-width: $bp-tiny){
+                    order: 3;
+                    margin: 0;
+                }
             }
             &__location{
                 font-size: 1.2rem;
                 color: $color-grey-dark-3;
+
+                @media only screen and (max-width: $bp-tiny){
+                    order: 4;
+                }
             }
             &__rating{
                 display: flex;
@@ -422,6 +615,13 @@ nav.sidebar{
                 font-size: 1.4rem;
                 color: $color-primary;
                 margin-left: auto;
+
+                @media only screen and (max-width: $bp-tiny){
+                    order: 1;
+                    position: absolute;
+                    right: 0;
+                    margin-top: -1rem;
+                }
 
                 &-star{
                     width: 1.6rem;
@@ -445,11 +645,32 @@ nav.sidebar{
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
+    @media only screen and (max-width: $bp-medium){
+        padding: 2rem 1rem;
+    } 
+
     .heading-secondary{
         font-size: 2.4rem;
         margin-bottom: 2rem;
         text-transform: uppercase;
         letter-spacing: 0.05rem;
+
+        @media only screen and (max-width: $bp-medium){
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.8rem;
+        }
+
+        @media only screen and (max-width: $bp-smallest){
+            font-size: 1.6rem;
+        }
+
+        @media only screen and (max-width: $bp-ultra-tiny){
+            font-size: 1.4rem;
+        }
     }
 
     .btn{
@@ -474,6 +695,11 @@ nav.sidebar{
             $color-primary-dark
         );
 
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.4rem;
+            padding: 1rem 2rem;
+        }
+
         & > * {
             display: inline-block;
             height: 100%;
@@ -491,6 +717,11 @@ nav.sidebar{
             top: -100%;
             left: 0;
             padding: 2rem 0;
+
+            @media only screen and (max-width: $bp-small){
+                font-size: 1.4rem;
+                padding: 0;
+            }
         }
 
         
@@ -502,6 +733,10 @@ nav.sidebar{
 
             .btn__invisible{
                 top: 10%;
+
+                @media only screen and (max-width: $bp-small){
+                    top: 25%;
+                }
             }
 
             .btn__visible{
